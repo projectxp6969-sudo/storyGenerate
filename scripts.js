@@ -1,5 +1,4 @@
 // ✅ KONFIGURASI
-const API_KEY = process.env.AI_APP_API_KEY ; // Ganti dengan API Key Anda
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 const MODEL = "deepseek/deepseek-chat-v3.1";
 
@@ -88,7 +87,6 @@ ${previousText ? "\n\n[Bagian Sebelumnya]:\n" + previousText : ""}
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
         model: MODEL,
@@ -179,4 +177,5 @@ themeToggle.addEventListener("click", () => {
     themeToggle.textContent = "🌙 Mode Gelap";
   }
 });
+
 
