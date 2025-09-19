@@ -1,5 +1,5 @@
 // ✅ KONFIGURASI
-const API_KEY = "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"; // Ganti dengan API Key Anda
+const API_KEY = process.env.AI_APP_API_KEY ; // Ganti dengan API Key Anda
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 const MODEL = "deepseek/deepseek-chat-v3.1";
 
@@ -179,3 +179,4 @@ themeToggle.addEventListener("click", () => {
     themeToggle.textContent = "🌙 Mode Gelap";
   }
 });
+
