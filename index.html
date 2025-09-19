@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Story Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Story Generator</h1>
+      <button id="theme-toggle">🌙 Mode Gelap</button>
+    </header>
+
+    <!-- Step 1: Input konfigurasi -->
+    <section id="config-section">
+      <label for="paragraphs">Jumlah paragraf per part:</label>
+      <input type="number" id="paragraphs" min="1" placeholder="Contoh: 3" />
+
+      <label for="sentences">Jumlah kalimat per paragraf:</label>
+      <input type="number" id="sentences" min="1" placeholder="Contoh: 5" />
+
+      <label for="totalParts">Jumlah total part:</label>
+      <input type="number" id="totalParts" min="1" placeholder="Contoh: 5" />
+
+      <button onclick="startStory()">Mulai Cerita</button>
+    </section>
+
+    <!-- Step 2: Input sinopsis per part -->
+    <section id="synopsis-section" style="display: none;">
+      <h2>Sinopsis Part <span id="part-number">1</span></h2>
+      <textarea id="synopsis-input" rows="6" placeholder="Masukkan sinopsis part ini..."></textarea>
+      <button onclick="generatePart()">Generate Cerita</button>
+    </section>
+
+    <!-- Step 3: Hasil cerita -->
+    <section id="story-section" style="display: none;">
+      <div id="all-stories"></div>
+      <div class="buttons">
+        <button onclick="revisePart()">Revisi</button>
+        <button onclick="nextPart()">Lanjut</button>
+        <button onclick="cancelStory()">Batal</button>
+        <button onclick="exportStory()">📄 Export TXT</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
